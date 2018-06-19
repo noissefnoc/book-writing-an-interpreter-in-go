@@ -96,3 +96,48 @@ let <identifier> = <expression>;
 ```
 
 という形式になっている。
+
+ASTを実装するために3つのインターフェースを実装する
+
+* Node : ASTのNodeを表す。今回のASTは端点をLeafのような別名を持たない
+    * `TokenLiteral() string` : ASTのNodeが関連づけられているトークンのリテラル値を返す　※デバッグとテストに使う
+* Statement
+    * `Node` : 一部ノードの属性
+    * `statementNode()` : ダミーメソッド。コンパイラ支援用
+* Expression
+    * `Node` : 一部ノードの属性
+    * `expressionNode()` : ダミーメソッド。コンパイラ支援用
+
+まず、ASTのルートノードを表す `Program` を以下のように定義する
+
+```.go
+type Program struct {
+    Statements []Statement
+}
+
+// TokenLiteral() を実装したので Program は Node と同様に扱える
+func (p *Program) TokenLiteral() string {
+    // 登録されている最初の Statement の TokenLiteral() を返す
+    if len(p.Statements) > 0 {
+        return p.Statements[0].TokenLiteral()
+    } else {
+        return ""
+    }
+}
+```
+
+次に `LetStatement` と `Identifier` を作成する。
+
+* `LetStatement` は token.LET トークン Name(変数名) と Value(代入値)を持つ
+* `Identifier` は token.IDENT と Value(実値)を持つ
+
+これらを用いると、例えば `let x = 5;` をAST表現すると
+
+```
+*ast.Program.Statements
+   -> *ast.LetStatement
+        Name  -> *ast.Identifier
+        Value -> *ast.Expression
+```
+
+となる。
