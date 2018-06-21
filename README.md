@@ -141,3 +141,16 @@ func (p *Program) TokenLiteral() string {
 ```
 
 となる。
+
+トークンをASTに変換する `Parser` を実装する。
+
+Parserは
+
+* 字句解析器インスタンスへのポインタ
+* 現在見ているトークン
+* １つ先のトークン
+
+の三つのフィールドを持っている。
+
+Newでトークンを2つ読み込み、curTokenとpeekTokenにセットする。
+
