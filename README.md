@@ -154,3 +154,4 @@ Parserは
 
 Newでトークンを2つ読み込み、curTokenとpeekTokenにセットする。
 
+ParseProgramでパースする。
