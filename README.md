@@ -155,3 +155,8 @@ Parserは
 Newでトークンを2つ読み込み、curTokenとpeekTokenにセットする。
 
 ParseProgramでパースする。
+
+
+## 2.8 構文解析木の拡張
+
+* `TODO` : `testInfixExpression` ヘルパ関数を使って `parser_test.go` をリファクタリングする。
