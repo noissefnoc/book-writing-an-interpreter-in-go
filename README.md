@@ -160,3 +160,10 @@ ParseProgramでパースする。
 ## 2.8 構文解析木の拡張
 
 * `TODO` : `testInfixExpression` ヘルパ関数を使って `parser_test.go` をリファクタリングする。
+
+
+### 2.8.1 真偽値リテラル
+
+`TestParsingPrefixExpressions` の改修で一部本で記述が省略されているか、見落としかが、あった。
+
+`prefixTests` が整数のみから `interface` に変わったのに伴って `testIntegerLiteral` のところを `testLiteralExpression` に変更する必要がある。
