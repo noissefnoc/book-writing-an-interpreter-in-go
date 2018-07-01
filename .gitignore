@@ -13,3 +13,7 @@
 
 # IDE setting file
 .idea
+
+# Intermediate objects
+monkey/bin
+monkey/dist
