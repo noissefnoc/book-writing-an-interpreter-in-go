@@ -190,6 +190,7 @@ ParseProgramでパースする。
 `TestParsingPrefixExpressions` の改修で一部本で記述が省略されているか、見落としかが、あった。
 
 `prefixTests` が整数のみから `interface` に変わったのに伴って `testIntegerLiteral` のところを `testLiteralExpression` に変更する必要がある。
+さらに、引数の`integerValue`を`value`に変更する必要がある。
 
 ### 2.8.3 if 式
 
