@@ -187,7 +187,7 @@ ParseProgramでパースする。
 
 ### 2.8.1 真偽値リテラル
 
-`TestParsingPrefixExpressions` の改修で一部本で記述が省略されているか、見落としかが、あった。
+`TestParsingPrefixExpressions` の改修で一部本で記述が省略されているが、見落としがあった。
 
 `prefixTests` が整数のみから `interface` に変わったのに伴って `testIntegerLiteral` のところを `testLiteralExpression` に変更する必要がある。
 さらに、引数の`integerValue`を`value`に変更する必要がある。
