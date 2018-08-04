@@ -207,5 +207,12 @@ ParseProgramでパースする。
 新しく構文を追加するときのステップ
 
 1. ASTノードを定義 (`ast/ast.go`)
+    1. 構文を開始トークンとブロックに分解した形式に分解する
+    1. NodeType, TokenLabel, Stringを定義
+    1. 同じくブロックも未定義なので、開始トークン、NodeType, TokenLabel, Stringを定義
 1. テストを書く(`parser/parser_test.go`)
+    1. パース対象の文字列を定義
+    1. Statementsに分解されているかをテスト
+    1. StatementsのtypeがExpressionかをテスト(これはAST定義時にNodeTypeとして定義したもの)
+    1. 各部分が正しく区分されているかのテスト
 1. 構文解析のコードを書いてテストを通るようにする(`parser/parser.go`)
